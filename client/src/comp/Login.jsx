@@ -32,7 +32,7 @@ export default function Login({login ,setLoginEmail,setLoginPassword}) {
                     />
                 </div>
                 <button onClick={login} className="text-white bg-rose-400 border-0 py-2 px-8 focus:outline-none hover:bg-rose-500 rounded text-lg">Login</button>
-                <p className="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+                {/* <p className="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p> */}
                 </div>
             </div>
             </section>
