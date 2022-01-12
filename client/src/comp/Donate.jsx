@@ -55,7 +55,7 @@ export default function Donate({user}) {
 			amount: data.amount.toString(),
 			order_id: data.id,
 			name: 'Donation',
-			description: 'Thank you for nothing. Please give us some money',
+			description: 'Thank you for Donation.',
 			handler: function (response) {
 				alert(response.razorpay_payment_id)
 				alert(response.razorpay_order_id)

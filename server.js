@@ -20,18 +20,6 @@ const razorpay = new Razorpay({
 })
 
 
-// app.use(require('./routes/auth'))
-// app.use(require('./routes/post'))
-// app.use(require('./routes/user'))
-
-
-// app.use( "/"  , require( './routes/index') )
-// app.use( "/api/users"   , require( './routes/users') )
-// app.use( "/api/report"   , require( './routes/report') )
-// app.use( "/api/holding"   , require( './routes/holding') )
-// app.use( "/api/watchlist"   , require( './routes/watchlist') )
-// app.use( "/api/transhistory"   , require( './routes/transHistory') )
-
 app.post('/verification', (req, res) => {
 	// do a validation
 	const secret = '12345678'
