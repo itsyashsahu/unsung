@@ -4,6 +4,10 @@ This is just Dommy Payment Gateway Intergration
 
 -- Basic User Interface Using Tailwind;
 
+These App is now deployed on Heroku so Go check it out 
+
+Live App Link -->   https://unsung-beats.herokuapp.com/
+
 Do Not Worry to Make Payments this is just the test Mode
 
 Homepage ( Sign Up Page )
