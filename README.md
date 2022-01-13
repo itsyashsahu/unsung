@@ -2,13 +2,15 @@ This is just Dommy Payment Gateway Intergration
 
 -- Signup and Login Using Firebase 
 
--- Basic User Interface Using Tailwind;
+-- User Interface Using Tailwind;
 
 These App is now deployed on Heroku so Go check it out 
 
 Live App Link -->   https://unsung-beats.herokuapp.com/
 
 Do Not Worry to Make Payments this is just the test Mode
+
+Some Screen Shots of these App 
 
 Homepage ( Sign Up Page )
 
@@ -17,6 +19,11 @@ Homepage ( Sign Up Page )
 DashBoard 
 
 ![DashBoard](screenshots/Screenshot_2.png "Dashboard of the web-app")
+
+Thank Giving Page 
+
+![Thanks Giving](screenshots/Screenshot_8.png "Thanks Giving Page of the web-app")
+
 
 Payment Gateway Interface 
 
