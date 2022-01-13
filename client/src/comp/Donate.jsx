@@ -16,7 +16,7 @@ function loadScript(src) {
 
 export default function Donate({user}) {
 
-    const __DEV__ = document.domain === 'localhost'
+    // const __DEV__ = document.domain === 'localhost'
 
     const [name, setName] = useState('Yash Sahu')
     const [ amt, setAmt ] = useState(0);
@@ -50,7 +50,8 @@ export default function Donate({user}) {
 		// console.log(data)
 
 		const options = {
-			key: __DEV__ ? 'rzp_test_FbGfHh97AaWWxS' : 'PRODUCTION_KEY',
+			// key: __DEV__ ? 'rzp_test_FbGfHh97AaWWxS' : 'PRODUCTION_KEY',
+			key:'rzp_test_FbGfHh97AaWWxS',
 			currency: data.currency,
 			amount: data.amount.toString(),
 			order_id: data.id,
