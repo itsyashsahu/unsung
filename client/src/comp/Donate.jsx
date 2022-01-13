@@ -22,6 +22,8 @@ export default function Donate({user}) {
     const [ amt, setAmt ] = useState(0);
 
     async function displayRazorpay() {
+        // console.log(process.env.RAZORPAY_KEY)
+
 
 
 		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')

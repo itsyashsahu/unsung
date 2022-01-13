@@ -3,12 +3,13 @@ const app = express()
 var cors = require('cors');
 const path = require('path')
 const PORT = process.env.PORT || 4000
+require('dotenv').config();
 // var express = require('express');
 // var router = express.Router();
-
+// console.log(process.env.RAZORPAY_KEY)
 const Razorpay = require('razorpay')
 const shortid = require('shortid')
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 app.use(express.json())
 app.use(cors());

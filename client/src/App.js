@@ -25,12 +25,13 @@ function App() {
   const [loginPassword, setLoginPassword] = useState("");
 
   const [user, setUser] = useState({});
+  
+  const [ err, setErr ] = useState(false);
 
 
   onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-    // console.log("hello iser",user)
 
   const register = async () => {
     try {
@@ -39,11 +40,19 @@ function App() {
           registerEmail,
           registerPassword
         );
-        // console.log(user);
         navigate("/dashboard")
 
       } catch (error) {
         console.log(error.message);
+        if(error.code==="auth/email-already-in-use")
+        {
+          console.log(error.code);
+          setErr("User Already Registered Try Logging In")
+        }
+        if(error.code==="auth/weak-password")
+        {
+          setErr("Password Should be at least 6 characters long. ");          
+        }
       }
     };
 
@@ -54,16 +63,24 @@ function App() {
         loginEmail,
         loginPassword
       );
-      // console.log(user);
       navigate("/dashboard");
     } catch (error) {
       console.log(error.message);
+      if(error.code==="auth/wrong-password")
+      {
+        setErr("Wrong Password, Please Check Your Password")
+      }
+      if(error.code==="auth/user-not-found")
+      {
+        setErr("User Not Found. Please Register on the Unsung Beats")
+      }
+
     }
   };
 
 
   const logout = async () => {
-    console.log("logout was called")
+    // console.log("logout was called")
     await signOut(auth);
     navigate("/")
 
@@ -79,8 +96,8 @@ function App() {
             <Route path="/dashboard" element={<UserNotFound />} />
             
         }
-        <Route path="/" element={<Signup setRegisterEmail={setRegisterEmail} setRegisterPassword={setRegisterPassword} register={register} />} />
-        <Route path="login" element={<Login login={login} setLoginPassword={setLoginPassword} setLoginEmail={setLoginEmail} />} />
+        <Route path="/" element={<Signup setRegisterEmail={setRegisterEmail} setRegisterPassword={setRegisterPassword} register={register} err={err} setErr={setErr} />} />
+        <Route path="login" element={<Login login={login} setLoginPassword={setLoginPassword} setLoginEmail={setLoginEmail} err={err} setErr={setErr} />} />
         <Route path="/thanks" element={<ThanksGiving />} />
       </Routes>
 
