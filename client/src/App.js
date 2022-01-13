@@ -13,6 +13,8 @@ import Header from './comp/Header';
 import Signup from './comp/Signup';
 import Donate from './comp/Donate';
 import Login from './comp/Login';
+import UserNotFound from './comp/UserNotFound';
+import ThanksGiving from './comp/ThanksGiving';
 
 function App() {
   const navigate = useNavigate()
@@ -72,13 +74,14 @@ function App() {
       <Header user={user} logout={logout} />
       <Routes>
         {
-          (user &&  
-            <Route path="/dashboard" element={<Donate user={user} />} />
-            )
+          (user)?  
+            <Route path="/dashboard" element={<Donate user={user} />} />:
+            <Route path="/dashboard" element={<UserNotFound />} />
+            
         }
         <Route path="/" element={<Signup setRegisterEmail={setRegisterEmail} setRegisterPassword={setRegisterPassword} register={register} />} />
         <Route path="login" element={<Login login={login} setLoginPassword={setLoginPassword} setLoginEmail={setLoginEmail} />} />
-        {/* <Route path="/" element={<Donate />} /> */}
+        <Route path="/thanks" element={<ThanksGiving />} />
       </Routes>
 
       {/* <Signup/> */}

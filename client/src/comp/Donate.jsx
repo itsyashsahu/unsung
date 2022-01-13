@@ -50,8 +50,7 @@ export default function Donate({user}) {
 		// console.log(data)
 
 		const options = {
-			// key: __DEV__ ? 'rzp_test_FbGfHh97AaWWxS' : 'PRODUCTION_KEY',
-			key:'rzp_test_FbGfHh97AaWWxS',
+			key:process.env.RAZORPAY_KEY,
 			currency: data.currency,
 			amount: data.amount.toString(),
 			order_id: data.id,
