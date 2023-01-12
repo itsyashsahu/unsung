@@ -19,7 +19,9 @@ const razorpay = new Razorpay({
 	key_id: 'rzp_test_FbGfHh97AaWWxS',
 	key_secret: 'nmt313sQXuQRfTeYYkHyQ43D'
 })
-
+app.get("/api", (req, res) => {
+  res.json({ message: `The API is Runing Man Go Ahead Do Your Shit  ` });
+});
 
 app.post('/verification', (req, res) => {
 	// do a validation
